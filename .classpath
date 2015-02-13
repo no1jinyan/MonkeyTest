@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="spring.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-aop-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-aspects-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-beans-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-context-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-core-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-expression-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-framework-bom-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-instrument-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-instrument-tomcat-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-jdbc-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-jms-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-orm-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-oxm-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-struts-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-test-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-tx-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-web-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-webmvc-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-webmvc-portlet-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/mybatis-3.2.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/mybatis-spring-1.2.2.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="mysql-connector-java-5.0.5-bin.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/jedis-2.6.2.jar" sourcepath="C:/Users/Administrator/.m2/repository/redis/clients/jedis/2.6.2/jedis-2.6.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/commons-pool2-2.0.jar" sourcepath="C:/Users/Administrator/.m2/repository/org/apache/commons/commons-pool2/2.0/commons-pool2-2.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Genuitec/MyEclipse 8.5/MonkeyTest/spring-data-redis-1.4.2.RELEASE.jar" sourcepath="C:/Users/Administrator/.m2/repository/org/springframework/data/spring-data-redis/1.4.2.RELEASE/spring-data-redis-1.4.2.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/HERMES_DEV/WebContent/WEB-INF/lib/json-lib-2.3-jdk13.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

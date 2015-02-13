@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+	<settings>
+    	<setting name="lazyLoadingEnabled" value="true"></setting>
+    </settings>
+    <typeAliases>
+    	<!-- 此外alias名称应与resultMap的type相同 -->  
+        <typeAlias alias="cityEntity" type="com.bankht.monkey.mybatis.entity.CityEntity"/>  
+        <typeAlias alias="countryEntity" type="com.bankht.monkey.mybatis.entity.CountryEntity"/>  
+        <typeAlias alias="studentEntity" type="com.bankht.monkey.mybatis.entity.StudentEntity"/>
+    </typeAliases>  
+    <mappers>  
+    <!-- 当Java接口与XML文件在一个相对路径下时，且名称相同，可以不在myBatis配置文件mapper的中声明。-->
+        <mapper resource="com/bankht/monkey/mybatis/dao/CityMapper.xml"></mapper>  
+    </mappers>  
+</configuration>   

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">  
+  
+<beans>  
+    <import resource="classpath:applicationContext-dao.xml" />  
+    
+    
+        
+    <bean id="cityMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">  
+	    <property name="mapperInterface" value="com.bankht.monkey.mybatis.dao.CityMapper" />  
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory" />  
+	</bean>  
+	<bean id="countryMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">  
+	    <property name="mapperInterface" value="com.bankht.monkey.mybatis.dao.CountryMapper" />  
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory" />  
+	</bean> 
+	<bean id="studentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">  
+	    <property name="mapperInterface" value="com.bankht.monkey.mybatis.dao.StudentMapper" />  
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory" />  
+	</bean> 
+   
+</beans> 
