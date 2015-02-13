@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bankht.monkey.mybatis.dao.CountryMapper">
+	<resultMap type="countryEntity" id="countryResultMap">
+		<id property="code" column="Code" javaType="String" />
+		<result property="name" column="Name" />
+		<result property="continent" column="Continent" />
+		<result property="region" column="Region" />
+		<result property="population" column="Population" />
+		<result property="liftExpectancy" column="LifeExpectancy" />
+		<result property="capital" column="Capital" />
+		<collection property="cityList" column="Code"
+			select="com.bankht.monkey.mybatis.dao.CityMapper.getCityByCountryCode"
+			javaType="ArrayList" ofType="cityEntity"></collection>
+			
+		<!--
+			有时一个单独的数据库查询也许返回很多不同（但是希望有些关联）数据类型的结果集。
+			鉴别器元素就是被设计来处理这个情况的，还有包括类的继承层次结构。
+			鉴别器非常容易理解，因为它的表现很像Java语言中的switch语句。
+			定义鉴别器指定了column和javaType属性。列是MyBatis查找比较值的地方。
+			JavaType是需要被用来保证等价测试的合适类型（尽管字符串在很多情形下都会有用）。
+		-->
+		<discriminator column="Code" javaType="String" jdbcType="VARCHAR">
+			<case value="CHN" resultType="countryEntity">
+				<result property="headOfState" column="Capital"/>
+			</case>
+		</discriminator>
+	</resultMap>
+
+	<select id="getCountry" parameterType="String" resultMap="countryResultMap">
+		 <![CDATA[ 
+                SELECT * from country 
+                    WHERE code = #{code}  
+         ]]>
+	</select>
+</mapper>

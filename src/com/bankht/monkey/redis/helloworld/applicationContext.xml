@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:redis.properties</value>
+		</property>
+	</bean>
+	
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="${redis.pool.maxActive}"></property>
+		<property name="maxIdle" value="${redis.pool.maxIdle}"></property>
+		<property name="maxWaitMillis" value="${redis.pool.maxWait}"></property>
+		<property name="testOnBorrow" value="${redis.pool.testOnBorrow}"></property>
+		<property name="testOnReturn" value="${redis.pool.testOnReturn}"></property>
+	</bean>
+	
+	<bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool">
+		<constructor-arg index="0" ref="jedisPoolConfig"></constructor-arg>
+		<constructor-arg index="1">
+			<list>
+				<bean class="redis.clients.jedis.JedisShardInfo">
+					<constructor-arg index="0" value="${redis1.ip}"></constructor-arg>
+					<constructor-arg index="1" value="${redis1.port}" type="int"></constructor-arg>
+					<constructor-arg index="2" value="redis1"></constructor-arg>
+				</bean>
+				<bean class="redis.clients.jedis.JedisShardInfo">
+					<constructor-arg index="0" value="${redis2.ip}"></constructor-arg>
+					<constructor-arg index="1" value="${redis2.port}" type="int"></constructor-arg>
+					<constructor-arg index="2" value="redis2"></constructor-arg>
+				</bean>
+				<bean class="redis.clients.jedis.JedisShardInfo">
+					<constructor-arg index="0" value="${redis3.ip}"></constructor-arg>
+					<constructor-arg index="1" value="${redis3.port}" type="int"></constructor-arg>
+					<constructor-arg index="2" value="redis3"></constructor-arg>
+				</bean>
+			</list>			
+		</constructor-arg>
+	</bean>
+</beans>

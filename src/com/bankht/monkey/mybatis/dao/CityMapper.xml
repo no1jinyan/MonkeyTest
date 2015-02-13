@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bankht.monkey.mybatis.dao.CityMapper">
+
+	<resultMap type="CityEntity" id="cityResultMap">
+		<id property="id" column="Id" />
+		<!-- 
+		id、result语句属性配置细节
+			property	需要映射到JavaBean 的属性名称。
+			column		数据表的列名或者标签别名。
+			javaType	一个完整的类名，或者是一个类型别名。如果你匹配的是一个JavaBean，那MyBatis 通常会自行检测到。然后，如果你是要映射到一个HashMap，那你需要指定javaType 要达到的目的。
+			jdbcType	数据表支持的类型列表。这个属性只在insert,update 或delete 的时候针对允许空的列有用。JDBC 需要这项，但MyBatis 不需要。如果你是直接针对JDBC 编码，且有允许空的列，而你要指定这项。
+			typeHandler	使用这个属性可以覆写类型处理器。这项值可以是一个完整的类名，也可以是一个类型别名。
+		 -->
+		<result property="name" column="Name" />
+		<result property="countryCode" column="CountryCode" />
+		<result property="district" column="District" />
+		<association property="countryEntity" column="CountryCode" select="com.bankht.monkey.mybatis.dao.CountryMapper.getCountry" ></association>
+	</resultMap>
+
+	<!-- 
+		id				在这个模式下唯一的标识符，可被其它语句引用
+		parameterType	传给此语句的参数的完整类名或别名
+		resultType 		语句返回值类型的整类名或别名。注意，如果是集合，那么这里填写的是集合的项的整类名或别名，而不是集合本身的类名。（resultType 与resultMap 不能并用） 		
+		resultMap 		引用的外部resultMap 名。结果集映射是MyBatis 中最强大的特性。许多复杂的映射都可以轻松解决。（resultType 与resultMap 不能并用） 		
+		flushCache 		如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false 	true|false 	false
+		useCache 		如果设为true，则语句的结果集将被缓存。select 语句默认设为false true|false false
+		timeout 		设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定 	true|false 	false
+		timeout  		设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定 	正整数 	未设置
+		fetchSize 		设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定 	正整数 	驱动器决定
+		statementType 	statement，preparedstatement，callablestatement。
+						预准备语句、可调用语句 	取值STATEMENT PREPARED CALLABLE 	默认设PREPARED
+		resultSetType 	forward_only，scroll_sensitive，scroll_insensitive
+						只转发，滚动敏感，不区分大小写的滚动 	取值FORWARD_ONLY SCROLL_SENSITIVE SCROLL_INSENSITIVE 	驱动器
+	 -->
+	<select id="getCity" parameterType="int" resultMap="cityResultMap">  
+            <![CDATA[ 
+                SELECT * from city 
+                    WHERE id = #{cityId}  
+            ]]>
+	</select>
+	
+	<select id="getCityByCountryCode" parameterType="String" resultMap="cityResultMap" >  
+            <![CDATA[ 
+                SELECT * from city 
+                    WHERE CountryCode = #{countryCode}  
+            ]]>
+	</select>
+</mapper>  

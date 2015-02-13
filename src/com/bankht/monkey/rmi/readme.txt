@@ -1,0 +1,1 @@
+ 运行service前先要注册rmiregistry，在bin下执行

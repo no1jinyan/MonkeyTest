@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bankht.monkey.mybatis.dao.StudentMapper">
+	<resultMap type="studentEntity" id="studentResultMap">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="password" column="password"/>
+		<result property="birthday" column="birthday"/>
+	</resultMap>
+	
+	<sql id="selectStudentAll">
+		Select id, name, email, password, birthday from student
+	</sql>
+	
+	<select id="getStudent" parameterType="int" resultMap="studentResultMap">
+		<include refid="selectStudentAll"/>
+			where id = #{id}
+	</select>
+	
+	<insert id="insertStudent" parameterType="studentEntity">
+		insert into student(name, email, password, birthday)
+			values(	#{name}, 
+					#{email},
+					#{password},
+					#{birthday})
+	</insert>
+	
+	<delete id="deleteStudent" parameterType="studentEntity">
+		delete from student where id = #{id}
+	</delete>
+	
+	<update id="update" parameterType="studentEntity">
+		update student 
+		<set>
+			<if test="name != null and name != '' ">
+				name = #{name}
+			</if>
+			<if test="email != null and email != '' ">
+				email = #{email}
+			</if>
+			<if test="password != null and password != '' ">
+				password = #{password}
+			</if>
+			<if test="birthday != null">
+				birthday = #{birthday}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>
